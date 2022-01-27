@@ -1,0 +1,10 @@
+fn countdown(n) {
+	if (eq(n, 0)) {
+		print("LIFTOFF!");
+		return;
+	}
+	print("T-minus", n);
+	countdown(sub(n, 1));
+}
+
+countdown(10);

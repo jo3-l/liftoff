@@ -1,0 +1,14 @@
+let student_grades = {
+	"bob": 100,
+	"john": 95,
+	"clark": 56
+};
+print(student_grades["bob"]);
+
+student_grades["clark"] = add(student_grades["clark"], 30);
+print(student_grades["clark"]);
+
+let students = ["bob", "john"];
+let bob = students[0];
+print(bob);
+

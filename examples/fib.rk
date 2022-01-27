@@ -1,0 +1,20 @@
+fn fib(n) {
+	let result = 1;
+	for (let i in range(1, add(n, 1))) { result = mul(result, i); }
+	return result;
+}
+
+while (true) {
+	let got = input("input a number (or exit to exit): ");
+	if (eq(got, "exit")) { break; }
+
+	let x = 0;
+	try {
+		x = parse_int(got);
+	} catch (err) {
+		print("invalid number, try again");
+		continue;
+	}
+
+	print(format("{}! = {}", x, fib(x)));
+}

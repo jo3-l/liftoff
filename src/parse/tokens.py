@@ -29,7 +29,6 @@ class TokenKind(Enum):
     BREAK = auto()  # break
     CATCH = auto()  # catch
     CONTINUE = auto()  # continue
-    EXCEPT = auto()  # except
     ELSE = auto()  # else
     FN = auto()  # fn
     FOR = auto()  # for
@@ -65,7 +64,6 @@ KEYWORDS = {
     "break": TokenKind.BREAK,
     "catch": TokenKind.CATCH,
     "continue": TokenKind.CONTINUE,
-    "except": TokenKind.EXCEPT,
     "else": TokenKind.ELSE,
     "fn": TokenKind.FN,
     "for": TokenKind.FOR,

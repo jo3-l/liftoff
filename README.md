@@ -33,7 +33,7 @@
 3. Run `cli.py`, passing the path of the Rocket file to run:
 
    ```
-   $ py src/cli.py examples/fib.rk
+   $ py src/cli.py examples/fac.rk
    ```
 
 ### Sample Programs

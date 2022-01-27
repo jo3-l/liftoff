@@ -1,4 +1,4 @@
-fn fib(n) {
+fn fac(n) {
 	let result = 1;
 	for (let i in range(1, add(n, 1))) { result = mul(result, i); }
 	return result;
@@ -16,5 +16,5 @@ while (true) {
 		continue;
 	}
 
-	print(format("{}! = {}", x, fib(x)));
+	print(format("{}! = {}", x, fac(x)));
 }

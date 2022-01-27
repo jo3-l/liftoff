@@ -4,7 +4,7 @@ from typing import Callable, Optional
 from common.errors import InternalError
 
 from parse.errors import SyntaxError
-from parse.tokens import KEYWORDS, Token, TokenKind
+from parse.tokens import KEYWORDS, SYNTAX, Token, TokenKind
 
 
 @dataclass
@@ -47,26 +47,8 @@ class Lexer:
         if c.isalpha() or c == "_":
             self._restore(backup)
             return self._lex_identifier()
-        elif c == ",":
-            return Token(TokenKind.COMMA, c, line, col)
-        elif c == ":":
-            return Token(TokenKind.COLON, c, line, col)
-        elif c == "=":
-            return Token(TokenKind.EQ, c, line, col)
-        elif c == "{":
-            return Token(TokenKind.LEFT_BRACE, c, line, col)
-        elif c == "}":
-            return Token(TokenKind.RIGHT_BRACE, c, line, col)
-        elif c == "(":
-            return Token(TokenKind.LEFT_PAREN, c, line, col)
-        elif c == ")":
-            return Token(TokenKind.RIGHT_PAREN, c, line, col)
-        elif c == "[":
-            return Token(TokenKind.LEFT_SQUARE_BRACKET, c, line, col)
-        elif c == "]":
-            return Token(TokenKind.RIGHT_SQUARE_BRACKET, c, line, col)
-        elif c == ";":
-            return Token(TokenKind.SEMICOLON, c, line, col)
+        elif c in SYNTAX:
+            return Token(SYNTAX[c], c, line, col)
         elif c == "/":
             if self._is_done():
                 raise SyntaxError(f"unexpected character '/'", line, col)

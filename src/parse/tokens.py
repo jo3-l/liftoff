@@ -76,3 +76,16 @@ KEYWORDS = {
     "try": TokenKind.TRY,
     "while": TokenKind.WHILE,
 }
+
+SYNTAX = {
+    ",": TokenKind.COMMA,
+    ":": TokenKind.COLON,
+    "=": TokenKind.EQ,
+    "{": TokenKind.LEFT_BRACE,
+    "}": TokenKind.RIGHT_BRACE,
+    "(": TokenKind.LEFT_PAREN,
+    ")": TokenKind.RIGHT_PAREN,
+    "[": TokenKind.LEFT_SQUARE_BRACKET,
+    "]": TokenKind.RIGHT_SQUARE_BRACKET,
+    ";": TokenKind.SEMICOLON,
+}

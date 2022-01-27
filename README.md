@@ -54,10 +54,10 @@ Statements must be followed by a semicolon.
 
 Multiple statements can be grouped together using braces, which form a block. Blocks introduce a new scope.
 
-```
+```js
 {
-	let x = 1;
-	let y = 2;
+  let x = 1;
+  let y = 2;
 }
 ```
 
@@ -65,7 +65,7 @@ Multiple statements can be grouped together using braces, which form a block. Bl
 
 Variables are introduced by the `let` keyword:
 
-```
+```js
 let x = 1;
 ```
 
@@ -73,14 +73,14 @@ let x = 1;
 
 Simple integer and float literals are supported (no fancy features like separators or hex), in addition to string, list, and dictionary literals. The `null` literal is also supported, being the equivalent of Python's `None`.
 
-```
+```js
 let int_lit = 1;
 let float_lit = 3.14;
 let str_lit = "hello,\nworld!";
 let list_lit = [[1, 2], 3.4, "five"];
 
 let foo = "foo";
-let dict_lit = {foo: 1};
+let dict_lit = { foo: 1 };
 let null_lit = null;
 ```
 
@@ -88,13 +88,13 @@ let null_lit = null;
 
 Conditionals are formed using the `if`, `else if`, and `else` statements.
 
-```
+```js
 if (cond) {
-	// ...
+  // ...
 } else if (other_cnd) {
-	// ...
+  // ...
 } else {
-	// ...
+  // ...
 }
 ```
 
@@ -106,25 +106,25 @@ There are three forms of loops in Rocket: for loops, iterator-based for loops, a
 
 All elements of the loop are optional, so `for (;;) {}` is a valid statement (resulting in an infinite loop.)
 
-```
+```js
 for (init_stmt; cond_expr; post_expr) {
-	// ...
+  // ...
 }
 ```
 
 **Iterator-based for-loops**
 
-```
-for (let item of iterable) {
-	// ...
+```js
+for (let item in iterable) {
+  // ...
 }
 ```
 
 **`while` loops**
 
-```
+```js
 while (loop_cond) {
-	// ...
+  // ...
 }
 ```
 
@@ -134,7 +134,7 @@ The `break` and `continue` statements may be used within the body of loops to ap
 
 Function definitions can appear anywhere in the global scope. As a special case, functions may call other functions regardless of their position in the source, unlike variables which must be declared before usage.
 
-```
+```js
 fn f() {
 	return 1;
 }
@@ -144,7 +144,7 @@ print(f());
 
 They may also accept a fixed number of parameters and return values:
 
-```
+```js
 fn my_add(a, b) {
 	return add(a, b);
 }
@@ -152,14 +152,14 @@ fn my_add(a, b) {
 
 Methods are a kind of function that are called on a receiver. Though they cannot be created in Rocket (which does not support user-defined objects beyond dictionaries), they are accessible via built-ins and are callable using the same syntax as functions:
 
-```
+```js
 let nums = [1, 2, 3, 4];
 print(nums.index(2));
 ```
 
 Function values are first-class, meaning they can be stored in variables for later use. More generally, they are no different from any other value.
 
-```
+```js
 let my_print = print;
 my_add("hello world!");
 ```
@@ -170,7 +170,7 @@ Attributes are properties belonging to values; items are key-value pairs of dict
 
 Again, though Rocket does not support user-defined objects, attributes and items can appear through usage of built-ins and go by syntax akin to Python (`a.b` and `a[b]`):
 
-```
+```js
 let people = ["joe", "bob"];
 print(people[0]); // joe
 ```
@@ -179,7 +179,7 @@ print(people[0]); // joe
 
 Line comments use the `//` token, while multiline comments use `/*` and `*/`. Multiline comments do not nest.
 
-```
+```js
 // I'm a line comment
 /* and I
    am a

@@ -1,0 +1,2 @@
+*.rk linguist-language=JavaScript
+*.rk -linguist-detectable
